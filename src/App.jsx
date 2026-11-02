@@ -11,7 +11,7 @@ function App() {
   const [watchList, setWatchList] = useState();
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.NODE_ENV === "production" ? "/reelfinder" : "/"}>
       <Routes>
         <Route path="/" element={<Login user={user} setUser={setUser} />} />
         <Route
